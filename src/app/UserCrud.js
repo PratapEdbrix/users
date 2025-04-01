@@ -103,8 +103,8 @@ function UserCrud() {
           />
         </div>
         <DataTable value={userlist} tableStyle={{ minWidth: "50rem" }}>
-          <Column header="First Name" field="firstName"></Column>
-          <Column header="Last Name" field="lastName"></Column>
+          <Column header="First Name" sortable field="firstName"></Column>
+          <Column header="Last Name" sortable field="lastName"></Column>
           <Column header="Email" field="email"></Column>
           <Column header="Phone Number" field="phoneNumber"></Column>
         </DataTable>
