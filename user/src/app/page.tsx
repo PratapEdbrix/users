@@ -2,17 +2,20 @@
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
+import { Toast } from 'primereact/toast';
 import { Sidebar } from 'primereact/sidebar';
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import "./globals.css";
 import { log } from 'console';
 
 export default function Home() {
   const [data, setData] = useState([]);
+  const toast = useRef(null);
   const [visibleRight, setVisibleRight] = useState(false);
+
   const [form, setForm] = useState(
     {
       firstname: "",
@@ -42,7 +45,10 @@ export default function Home() {
       email: "",
       number: ""
     });
+    alert("User Added Successfully")
     setVisibleRight(false);
+
+   
   }
 
   return (
