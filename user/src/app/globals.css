@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+.p-button {
+  color: #fff;
+  /* background: #da0f5c;
+  border: 1px solid #da0f5c; */
+  padding: .75rem 1.25rem;
+  font-size: 1rem;
+  transition: background-color .2s, color .2s, border-color .2s, box-shadow .2s;
+  border-radius: 6px;
+  width: 100px;
+  height: 40px;
+}
