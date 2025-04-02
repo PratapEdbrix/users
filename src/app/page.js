@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import "primeicons/primeicons.css";
 import { PrimeReactProvider, PrimeReactContext } from "primereact/api";
