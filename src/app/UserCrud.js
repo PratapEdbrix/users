@@ -30,22 +30,14 @@ function UserCrud() {
   function handleSubmit(e) {
     e.preventDefault();
     if (showUpdatebutton) {
-      setuserlist((prev) => {
-        const arr = [...prev];
-        arr.forEach((user) => {
-          if (user.email === userdata.email) {
-            (user.firstName = userdata.firstName),
-              (user.lastName = userdata.lastName),
-              (user.email = userdata.email),
-              (user.phoneNumber = userdata.phoneNumber);
-          }
-        });
-        return arr;
-      });
+      setuserlist((prev) =>
+        prev.map((user) =>
+          user.email === userdata.email ? { ...user, ...userdata } : user
+        )
+      );
+
       setVisible(false);
-      toast.success("Successfully Updated User", {
-        position: "bottom-center",
-      });
+      toast.success("Successfully Updated User", { position: "bottom-center" });
     } else {
       const emailExists = userlist.some(
         (user) => user.email === userdata.email
