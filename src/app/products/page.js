@@ -7,7 +7,7 @@ import "primeicons/primeicons.css";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addItems , setProducts } from "../../../lib/features/cartSlice";
-import { useRouter } from "next/navigation"; // ✅ Fix: Use `next/navigation` instead of `next/router`
+import { useRouter } from "next/navigation"; 
 import axios from "axios";
 import { Button } from "primereact/button";
 import { ToastContainer } from 'react-toastify';

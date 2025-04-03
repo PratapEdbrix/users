@@ -1,7 +1,7 @@
 "use client";
 import { addItems } from "../../../../lib/features/cartSlice";
 import { useSelector } from "react-redux";
-import { useParams } from "next/navigation"; // ✅ Correct way to get params in Next.js 13+
+import { useParams } from "next/navigation"; 
 import { useDispatch } from "react-redux";
 export default function ProductDetails() {
     const { id } = useParams();
