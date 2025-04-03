@@ -68,7 +68,6 @@ const UserData = () => {
 
     // Handle Delete
     const handleDelete = (id) => {
-
         setUsers(users.filter(user => user.id !== id));
         toast.success("user deleted successfully!");
     };
