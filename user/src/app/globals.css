@@ -11,3 +11,30 @@
   width: 100px;
   height: 40px;
 }
+
+.p-sidebar.custsiderbar {
+  width: 550px;
+}
+
+.custsiderbar .p-sidebar-header {
+  display: none;
+}
+
+.p-button.custombtn {
+  background-color: ghostwhite;
+  margin-right: 10px;
+  background-color: white;
+  color: black;
+  font-weight: bolder;
+  border: none;
+  height: 50px;
+  
+}
+body{
+  background-color: #eaeded;
+}
+
+.p-button.custom{
+  background-color: #0092b8;
+  width: 135px;
+}

@@ -6,6 +6,7 @@ import { Toast } from 'primereact/toast';
 import { Sidebar } from 'primereact/sidebar';
 import "primereact/resources/themes/lara-light-blue/theme.css";
 import "primereact/resources/primereact.min.css";
+import 'primeicons/primeicons.css';
 import { useRef, useState } from 'react';
 import { InputText } from 'primereact/inputtext';
 import "./globals.css";
@@ -48,7 +49,7 @@ export default function Home() {
     alert("User Added Successfully")
     setVisibleRight(false);
 
-   
+
   }
 
   return (
@@ -61,11 +62,16 @@ export default function Home() {
             <h3>Total Data : {total}</h3>
           </div>
           <div className=" m-6 mr-16 mb-0">
-            <Button label='Add' onClick={() => setVisibleRight(true)} />
+            <Button className='text-xl font-bold' onClick={() => setVisibleRight(true)} ><i className="pi pi-plus mr-2 " ></i> Add</Button>
           </div>
         </div>
 
-        <Sidebar visible={visibleRight} position="right" onHide={() => setVisibleRight(false)}>
+        <Sidebar visible={visibleRight} className='custsiderbar relative' position="right" onHide={() => setVisibleRight(false)}>
+          <div className='absolute bottom-0 right-0 p-[16px] 3xl:p-[0.833vw] flex justify-start items-center gap-4 bg-[#FFF]'>
+            <div>
+              
+            </div>
+          </div>
           <div className="card flex flex-col align-items-center gap-3">
             <label htmlFor="firstname">First Name</label>
             <InputText id="firstname" value={form.firstname} onChange={handleChange} />
@@ -80,7 +86,7 @@ export default function Home() {
             <InputText id="number" value={form.number} onChange={handleChange} />
           </div>
 
-          <div className='flex flex-row justify-center gap-8 mt-20'>
+          <div className='absolute bottom-0 right-0 p-[16px] 3xl:p-[0.833vw] flex justify-end items-center gap-4 bg-[#FFF]'>
             <Button label="Cancel" icon="pi pi-times" onClick={() => setVisibleRight(false)} />
             <Button label="Submit" icon="pi pi-check" onClick={(e) => handleSubmit(e)} />
           </div>
@@ -89,10 +95,13 @@ export default function Home() {
 
       <div className="card m-14 shadow-2xl">
         <DataTable value={data} tableStyle={{ minWidth: '50rem' }}>
-          <Column field="firstname" header="First Name"></Column>
-          <Column field="lastname" header="Last Name"></Column>
-          <Column field="email" header="Email"></Column>
-          <Column field="number" header="Mobile Number"></Column>
+          <Column sortable field="firstname" header="First Name"></Column>
+          <Column sortable field="lastname" header="Last Name"></Column>
+          <Column sortable field="email" header="Email"></Column>
+          <Column sortable field="number" header="Mobile Number"></Column>
+          <Column header='Action'>
+            <Button label=''></Button>
+          </Column>
         </DataTable>
       </div>
     </div>
