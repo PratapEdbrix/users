@@ -10,7 +10,7 @@ import { addItems , setProducts } from "../../../lib/features/cartSlice";
 import { useRouter } from "next/navigation"; // ✅ Fix: Use `next/navigation` instead of `next/router`
 import axios from "axios";
 import { Button } from "primereact/button";
-
+import { ToastContainer } from 'react-toastify';
 export default function ProductList() {
   
   const dispatch = useDispatch();
@@ -42,16 +42,9 @@ export default function ProductList() {
 
   return (
     <div className="min-h-screen bg-gray-150 p-6 mx-12">
-            <div className=" flex mx-auto my-5 items-center gap-5 w-fit">
-          {pages.map((page) => (
-            <Button
-              severity="help"
-              label={page}
-              onClick={() => setskip((page - 1) * 30)}
-            />
-          ))}
-        </div>
-        
+           
+       <ToastContainer></ToastContainer>
+
       <div className="flex justify-around items-center">
         <h2 className="text-2xl font-semibold text-center text-gray-800 mb-4">
           Product List
@@ -101,6 +94,17 @@ export default function ProductList() {
           )}
           </div>
       </div>
+
+      <div className=" flex mx-auto my-5 items-center gap-5 w-fit">
+          {pages.map((page) => (
+            <Button
+              severity="help"
+              label={page}
+              onClick={() => setskip((page - 1) * 30)}
+             
+            />
+          ))}
+        </div>
     </div>
   );
 }
