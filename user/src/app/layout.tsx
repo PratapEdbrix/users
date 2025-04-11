@@ -4,18 +4,11 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import store from './redux/store'
 import { Provider } from 'react-redux'
+import { persistStore } from "redux-persist";
+import { PersistGate } from "redux-persist/integration/react";
 
 
-// let findData = state.find((item) => item.id === action.payload.id)
-//       if (findData) {
-//           findData.quantity += 1
-//       } else {
-
-//           state.push(action.payload)
-//       }
-
-//     }
-
+let persistStoreInstance = persistStore(store);
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,7 +19,9 @@ export default function RootLayout({
       <body
         >
         <Provider store={store}>
+          <PersistGate persistor={persistStoreInstance} loading={null}>
           {children}
+          </PersistGate>
         </Provider>
       </body>
     </html>
